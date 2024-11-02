@@ -1,5 +1,5 @@
-from Tasks.sql_model import Task
-from Tasks.base_model import AddTask
+from src.Tasks.sql_model import Task
+from src.Tasks.base_model import AddTask
 
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select

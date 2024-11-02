@@ -1,5 +1,5 @@
-from Projects.sql_model import Project
-from Projects.base_model import AddUpdateProject
+from src.Projects.sql_model import Project
+from src.Projects.base_model import AddUpdateProject
 
 from pydantic import BaseModel
 

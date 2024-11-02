@@ -2,12 +2,12 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
 from sqlalchemy.orm import selectinload
 
-from Members.sql_model import members
-from Members.base_model import AddUpdateMember
+from src.Members.sql_model import members
+from src.Members.base_model import AddUpdateMember
 
 from pydantic import BaseModel
 
-from auth import utils
+from src.auth import utils
 
 class MemeberService:
     def __convert_model_to_dict(self, model:BaseModel) -> dict:
@@ -26,7 +26,7 @@ class MemeberService:
 
     async def get_all(self, session: AsyncSession) -> list:
         try:
-            from MemberShip.sql_model import MemeberShip
+            from src.MemberShip.sql_model import MemeberShip
             # Select all members with their associated membership name
             query = select(members.memebr_id,
                         members.FirstName, 

@@ -1,5 +1,5 @@
-from Projects.service import ProjectService
-from Projects.base_model import AddUpdateProject
+from src.Projects.service import ProjectService
+from src.Projects.base_model import AddUpdateProject
 
 from fastapi.routing import APIRouter
 from fastapi import status, Depends
@@ -8,9 +8,9 @@ from fastapi.encoders import jsonable_encoder
 from fastapi.exceptions import HTTPException
 
 from sqlalchemy.ext.asyncio import AsyncSession 
-from db.db_context import get_session
+from src.db.db_context import get_session
 
-from auth.dependencies import AccessTokenBearer, RolesChecker
+from src.auth.dependencies import AccessTokenBearer, RolesChecker
 
 project_router = APIRouter(prefix="/Projects", tags=["Projects"])
 service = ProjectService()

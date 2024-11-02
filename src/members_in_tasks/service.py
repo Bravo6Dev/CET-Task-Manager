@@ -2,8 +2,8 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
 from sqlalchemy import func
 
-from members_in_tasks.sql_model import MembersInTasks
-from members_in_tasks.base_model import AddUpdateMemberInTask
+from src.members_in_tasks.sql_model import MembersInTasks
+from src.members_in_tasks.base_model import AddUpdateMemberInTask
 
 from pydantic import BaseModel
 
@@ -23,7 +23,7 @@ class MemberInTaskService:
     async def get_all(self, session: AsyncSession):
         try:
             from src.Members.sql_model import members
-            from Tasks.sql_model import Task
+            from src.Tasks.sql_model import Task
 
             query = select(MembersInTasks.id, func.concat(members.FirstName, " ", members.LastName).label("full_name"),
                     Task.task_name, Task.deadline).join(members, 

@@ -5,12 +5,12 @@ from fastapi.exceptions import HTTPException
 
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from db.db_context import get_session
+from src.db.db_context import get_session
 
-from members_in_tasks.service import MemberInTaskService
-from members_in_tasks.base_model import AddUpdateMemberInTask
+from src.members_in_tasks.service import MemberInTaskService
+from src.members_in_tasks.base_model import AddUpdateMemberInTask
 
-from auth.dependencies import AccessTokenBearer, RolesChecker
+from src.auth.dependencies import AccessTokenBearer, RolesChecker
 
 member_in_task_router = APIRouter(prefix="/MembersInTasks", tags=["MembersInTasks"])
 service = MemberInTaskService()

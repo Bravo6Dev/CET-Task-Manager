@@ -1,13 +1,14 @@
 from fastapi.security import HTTPBearer
 from fastapi import Request, Depends, HTTPException, status
 from logging import exception
-from auth.utils import decode_token
 
-from Members.sql_model import members
+from src.auth.utils import decode_token
+
+from src.Members.sql_model import members
 
 from sqlalchemy.ext.asyncio import AsyncSession
-from db.db_context import get_session
-from Members.service import MemeberService
+from src.db.db_context import get_session
+from src.Members.service import MemeberService
 
 service = MemeberService()
 

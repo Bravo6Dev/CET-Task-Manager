@@ -1,5 +1,5 @@
-from MemberShip.schema import AddUpdateMemberShip
-from MemberShip.sql_model import MemeberShip
+from src.MemberShip.schema import AddUpdateMemberShip
+from src.MemberShip.sql_model import MemeberShip
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
 from pydantic import BaseModel

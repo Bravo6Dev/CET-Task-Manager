@@ -2,7 +2,7 @@ from logging import exception
 from passlib.context import CryptContext
 import jwt
 
-from config import config
+from src.config import config
 from datetime import datetime, timedelta
 
 context = CryptContext(schemes=["bcrypt"], deprecated="auto")

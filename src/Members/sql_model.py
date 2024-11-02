@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.orm import relationship
-from db.db_context import base
+from src.db.db_context import base
 
 
 class members(base):

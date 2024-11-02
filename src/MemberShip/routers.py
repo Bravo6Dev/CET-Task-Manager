@@ -3,13 +3,13 @@ from fastapi.routing import APIRouter
 from fastapi.responses import JSONResponse
 from fastapi.encoders import jsonable_encoder
 
-from MemberShip.service import MemberShipService
-from db.db_context import get_session
-from MemberShip.schema import AddUpdateMemberShip
+from src.MemberShip.service import MemberShipService
+from src.db.db_context import get_session
+from src.MemberShip.schema import AddUpdateMemberShip
 
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from auth.dependencies import AccessTokenBearer, RolesChecker
+from src.auth.dependencies import AccessTokenBearer, RolesChecker
 
 membership_router = APIRouter(prefix="/MemberShip", tags=["MemberShip"])
 membership_service = MemberShipService()

@@ -4,13 +4,13 @@ from fastapi.exceptions import HTTPException
 from fastapi.encoders import jsonable_encoder
 from fastapi import status, Depends
 
-from Tasks.service import TaskService
-from Tasks.base_model import AddTask
+from src.Tasks.service import TaskService
+from src.Tasks.base_model import AddTask
 
 from sqlalchemy.ext.asyncio import AsyncSession
-from db.db_context import get_session
+from src.db.db_context import get_session
 
-from auth.dependencies import AccessTokenBearer, RolesChecker
+from src.auth.dependencies import AccessTokenBearer, RolesChecker
 
 task_router = APIRouter(prefix="/Tasks", tags=["Tasks"])
 service = TaskService()

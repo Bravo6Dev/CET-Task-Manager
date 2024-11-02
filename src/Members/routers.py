@@ -3,14 +3,14 @@ from fastapi.responses import  JSONResponse
 from fastapi.encoders import jsonable_encoder
 
 from sqlalchemy.ext.asyncio import AsyncSession
-from db.db_context import get_session
+from src.db.db_context import get_session
 
-from Members.service import MemeberService
-from Members.base_model import AddUpdateMember
-from Members.base_model import Login
+from src.Members.service import MemeberService
+from src.Members.base_model import AddUpdateMember
+from src.Members.base_model import Login
 
-from auth.dependencies import AccessTokenBearer, RolesChecker
-from auth.utils import create_token, verfiy_password
+from src.auth.dependencies import AccessTokenBearer, RolesChecker
+from src.auth.utils import create_token, verfiy_password
 
 member_router = APIRouter(prefix='/members', tags=["Members"])
 service = MemeberService()
